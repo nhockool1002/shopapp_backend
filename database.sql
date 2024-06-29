@@ -1,6 +1,3 @@
-CREATE DATABASE shopapp_sb;
-USE shopapp_sb;
-
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fullname VARCHAR(100) DEFAULT '',
@@ -83,8 +80,8 @@ CREATE TABLE orders (
     note VARCHAR(200) DEFAULT '',
     order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(20),
-    total_money FLOAT DEFAULT CHECK (total_money > 0)
-)
+    total_money FLOAT CHECK (total_money > 0)
+);
 
 ALTER TABLE orders ADD COLUMN shipping_method VARCHAR(100);
 ALTER TABLE orders ADD COLUMN shipping_address VARCHAR(200);
